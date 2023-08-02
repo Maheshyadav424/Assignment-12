@@ -1,0 +1,40 @@
+3.Write a JavaScript program to iterate over an array inputted by the user using
+mapping. Perform the square of all elements in the original array, store the
+squares in a new array and make a mapping for the squares and display it.
+Sample Input:
+[ 1, 2, 3, 4, 5 ]
+Explanation:
+Original Array = [ 1, 2, 3, 4, 5 ]
+New Array = [ 1, 4, 9, 16, 25 ]
+Mapping = squares => [ 1, 4, 9, 16, 25 ]
+Output:
+[ 1, 4, 9, 16, 25 ]
+
+
+
+Ans:
+
+                                          // Function to calculate the square of each element in the array using map
+function calculateSquares(inputArray) {
+  const squaresArray = inputArray.map(element => element * element);
+  return squaresArray;
+}
+
+                                          // Get the array input from the user (you can replace this with any input method you prefer)
+const readline = require('readline').createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+readline.question('Enter the elements of the array (comma-separated): ', input => {
+  readline.close();
+
+                                            // Convert the comma-separated input string into an array of numbers
+  const inputArray = input.split(',').map(Number);
+
+                                          // Calculate the squares of the elements using the calculateSquares function
+  const squares = calculateSquares(inputArray);
+
+                                 // Display the squares array
+  console.log(squares);
+});

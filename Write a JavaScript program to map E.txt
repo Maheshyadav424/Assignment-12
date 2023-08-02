@@ -1,0 +1,91 @@
+Write a JavaScript program to map Employee Records according to Employee
+IDs.
+Employee: { id, name, salary }
+a) Print an array of all employee ids
+b) Print count of employees
+c) Print the name of the employee according to their id { key: value }
+d) Store the salaries of all employees in an array
+e) Calculate the average salary the company is paying to its employees
+
+
+
+Sample Input:
+"id": [ 67, 48, 29 ]
+"name": [ "Hitanshu", “Ninad”, “Amandeep” ]
+"salary": [ 75000, 82000, 98000 ]
+Output:
+[ 67, 48, 29 ]
+3
+67: Hitanshu
+48: Ninad
+29: Amandeep
+[ 75000, 82000, 98000 ]
+85000
+
+
+Ans: 
+                                            // Sample Input
+const ids = [67, 48, 29];
+const names = ["Hitanshu", "Ninad", "Amandeep"];
+const salaries = [75000, 82000, 98000];
+
+
+                                           // Function to print an array of all employee IDs
+function printEmployeeIDs() {
+  console.log(ids);
+}
+
+                                             // Function to print the count of employees
+function printEmployeeCount() {
+  console.log(ids.length);
+}
+
+                                          // Function to print the name of the employee according to their ID
+function printEmployeeNames() {
+  let employeeNameMap = {};
+  for (let i = 0; i < ids.length; i++) {
+    employeeNameMap[ids[i]] = names[i];
+  }
+  console.log(employeeNameMap);
+}
+
+
+                                                  // Function to store the salaries of all employees in an array
+function storeSalaries() {
+  console.log(salaries);
+}
+
+                                              // Function to calculate the average salary of the company's employees
+function calculateAverageSalary() {
+  const totalSalary = salaries.reduce((sum, salary) => sum + salary, 0);
+  const averageSalary = totalSalary / salaries.length;
+  console.log(averageSalary);
+}
+
+// Call the functions
+
+     // a) Print an array of all employee IDs
+
+printEmployeeIDs();
+
+            // b) Print count of employees
+printEmployeeCount();
+
+             // c) Print the name of the employee according to their ID
+printEmployeeNames();
+
+              // d) Store the salaries of all employees in an array
+storeSalaries();
+
+              // e) Calculate the average salary the company is paying to its employees.
+calculateAverageSalary();
+
+
+
+output:
+
+{
+  67: "Hitanshu",
+  48: "Ninad",
+  29: "Amandeep"
+}
